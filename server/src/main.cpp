@@ -1,6 +1,6 @@
 /*
  * RESTful web server for responsive UI app (I/O control).
- * Author: Frnaco Fiorese
+ * Author: Fraaco Fiorese
  * Date: 21-Aug-2016
  */
 
