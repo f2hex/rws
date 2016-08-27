@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>ESP8266 Web Form Demo</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="buttons.css">
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+    <center>
+      <h3>ESP8266 Web LED control</h3>
+    </center>
+    <div class="main">
+      
+      <form id="dialog">
+	<div class="property-group">
+	  <h3>Main Group</h3>
+	  <div class="property">
+	    <div class="col1">Main LED</div>
+	    <div class="col2">
+	      <div class="onoffswitch">
+		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="led1" checked>
+		<label class="onoffswitch-label" for="led1"></label>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="property">
+	    <div class="col1">Secondary LED</div>
+	    <div class="col2">
+	      <div class="onoffswitch">
+		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="led2" checked>
+		<label class="onoffswitch-label" for="led2"></label>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </form>
+    </div>
+    
+  </body>
+</html>
+

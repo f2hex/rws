@@ -1,0 +1,2 @@
+#!/bin/bash
+platformio serialports monitor --raw -b 115200

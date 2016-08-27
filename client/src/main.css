@@ -1,0 +1,57 @@
+ body { 
+     background-color: white;
+     font-family: Arial, Helvetica, Sans-Serif;
+     color: #000000;
+}
+
+div.main {
+    padding: 1em;
+    color: black;
+    background-color: white;
+    clear: left;
+    text-align: center;
+}
+
+div.bcont {
+    padding-top: 0.5em;
+    text-align: center;
+}
+
+.property-group {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    /* border-bottom: 1px solid #ddd;
+       box-shadow: 0 1px 0px #fff; */
+}
+
+form {
+    width: 100%;
+    background-color:#eee;
+    overflow:hidden;
+}
+
+.col1 {
+    padding-left: 4px;
+    display:block;
+    float:left;
+    width:50%;
+    background-color:#eee;
+    border:0;
+    text-align: left;
+}
+
+.col2 {
+    position: relative;
+    top: 6px;
+    display: block;
+    float: right;
+    width: 45%;
+    background-color: #eee;
+    border:0;
+}
+
+.property {
+    display: float;
+    line-height:46px;
+    padding-bottom: 5px;
+}

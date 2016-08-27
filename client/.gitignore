@@ -1,0 +1,8 @@
+.pioenvs
+# ignore any file under ./data dir
+data/*
+## Emacs related
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+
