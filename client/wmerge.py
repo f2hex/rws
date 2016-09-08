@@ -46,3 +46,11 @@ with gzip.GzipFile(fileobj=out, mode="w") as f:
 # save result gzipped HTML as file 
 with open("index.min.html.gz",'wb') as fout:
     fout.write(out.getvalue())
+<<<<<<< HEAD
+=======
+
+#with open("index.min-hex.h",'wb') as fout:
+#    fout.write("const char index_html[] = {\n")
+#    fout.write(cdecl)
+#    fout.write("}};\nunsigned int index_html_len = {:d};".format(len(out.getvalue())))
+>>>>>>> acc1292db6fedf90eba602331d2f4965cd72263d
