@@ -59,7 +59,7 @@ for x in range(0, dlen, 16):
 with open("index.min.html.gz",'wb') as fout:
     fout.write(out.getvalue())
 
-with open("index.min-hex.h",'wb') as fout:
-    fout.write("const char index_html[] = {\n")
-    fout.write(cdecl)
-    fout.write("}};\nunsigned int index_html_len = {:d};".format(len(out.getvalue())))
+#with open("index.min-hex.h",'wb') as fout:
+#    fout.write("const char index_html[] = {\n")
+#    fout.write(cdecl)
+#    fout.write("}};\nunsigned int index_html_len = {:d};".format(len(out.getvalue())))
