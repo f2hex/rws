@@ -14,6 +14,7 @@ from csscompressor import compress as cmin
 import StringIO
 import gzip
 
+# look inside the index.html file for any href resource
 soup = bs(open("index.html"))
 styles = ""
 for link in soup.findAll('link'):
@@ -25,7 +26,6 @@ new_tag = soup.new_tag("style")
 new_tag.string = styles
 soup.body.insert_before(new_tag)
 
-
 scripts = ""
 for script in soup.findAll('script'):
     with open(script["src"], 'rb') as finp:
@@ -36,30 +36,13 @@ new_tag = soup.new_tag("script")
 new_tag.string = scripts
 soup.style.insert_after(new_tag)
 
+# minify the resulting HTML content...
 minified = hmin(soup.prettify(formatter="html").decode('utf-8'), remove_empty_space=True)
 
-#for x in range(0, len(minified), 16):
-#  ",".join("0x{:02x}".format(ord(c)) for c in s[x:16])
-#     print("".join() for c in minified[x:16])
-
-
+# ...and gzip it
 out = StringIO.StringIO()
 with gzip.GzipFile(fileobj=out, mode="w") as f:
   f.write(minified)
-
-cdecl = ""
-dlen = len(out.getvalue())
-for x in range(0, dlen, 16):
-    cdecl += ",".join("0x{:02x}".format(ord(c)) for c in out.getvalue()[x:x+16])
-    # do not add end comma to the last row
-    if x+16 < dlen:
-        cdecl += ","
-    cdecl += "\n"
-
+# save result gzipped HTML as file 
 with open("index.min.html.gz",'wb') as fout:
     fout.write(out.getvalue())
-
-with open("index.min-hex.h",'wb') as fout:
-    fout.write("const char index_html[] = {\n")
-    fout.write(cdecl)
-    fout.write("}};\nunsigned int index_html_len = {:d};".format(len(out.getvalue())))

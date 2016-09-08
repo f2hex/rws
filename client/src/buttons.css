@@ -1,17 +1,21 @@
-.onoffswitch {
+/*
+ * Original code from Lea Verou (proto.io freebie) https://proto.io/freebies/onoff/
+ * Modififed and adapted for the specific situation.
+ */
+.oosw {
     position: relative; width: 55px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
-.onoffswitch-checkbox {
+.oosw-cb {
     display: none;
 }
-.onoffswitch-label {
+.oosw-lbl {
     display: block; overflow: hidden; cursor: pointer;
     height: 20px; padding: 0; line-height: 20px;
     border: 0px solid #FFFFFF; border-radius: 30px;
     background-color: #9E9E9E;
 }
-.onoffswitch-label:before {
+.oosw-lbl:before {
     content: "";
     display: block; width: 30px; margin: -5px;
     background: #FFFFFF;
@@ -20,16 +24,16 @@
     border-radius: 30px;
     box-shadow: 0 6px 12px 0px #757575;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label {
+.oosw-cb:checked + .oosw-lbl {
     background-color: #1C639C;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+.oosw-cb:checked + .oosw-lbl, .oosw-cb:checked + .oosw-lbl:before {
    border-color: #42A5F5;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+.oosw-cb:checked + .oosw-lbl .oosw-inner {
     margin-left: 0;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+.oosw-cb:checked + .oosw-lbl:before {
     right: 0px; 
     background-color: #2196F3; 
     box-shadow: 3px 6px 18px 0px rgba(0, 0, 0, 0.2);

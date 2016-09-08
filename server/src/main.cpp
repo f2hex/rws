@@ -14,10 +14,10 @@
 // Fill in your WiFi router SSID and password
 
 // global contstant
-//const char* ssid = "f2hex-hs";
-//const char* password = "BLACKTURKEY";
-const char* ssid = "aristofane";
-const char* password = "ms5kkvprk4ma8";
+const char* ssid = "f2hex-hs";
+const char* password = "BLACKTURKEY";
+//const char* ssid = "aristofane";
+//const char* password = "ms5kkvprk4ma8";
 
 // global vars
 MDNSResponder mdns;
@@ -42,7 +42,7 @@ String read_channel(int chan) {
  * write data to the specified channel (GPIO)
  */
 void write_channel(int chan, bool val) {
-    digitalWrite(LEDPIN, val);
+    digitalWrite(LEDPIN, !val);
     dport[0] = val;
 }
 
@@ -166,6 +166,8 @@ void handle_inv_request() {
 void setup(void) {
     pinMode(LEDPIN, OUTPUT);
     write_channel(0, false);
+
+    write_channel(1, true);
     
     Serial.begin(115200);
     WiFi.begin(ssid, password);
